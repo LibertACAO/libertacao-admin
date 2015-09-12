@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "LibertACAO": {
+      "applicationId": "9Vy5LFTpV5MR64a7jbnX4DfQ4uqJH1pPLFx1kuEC"
+    },
+    "_default": {
+      "link": "LibertACAO"
+    }
+  }
+}
