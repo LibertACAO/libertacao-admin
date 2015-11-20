@@ -49,9 +49,6 @@ Parse.Cloud.define("sendPushToLocation", function(request, response) {
 		userQuery.withinMiles("location", locationGeoPoint, 100.0);
 		pushQuery.matchesQuery('user', userQuery);
 		// TODO: confirm that this works with more than 1000 users!
-
-		response.error("Permission denied! User is not an admin.");
-  		return;
 	}	
 
 	// Send the push notification to results of the query
