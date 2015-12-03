@@ -34,6 +34,7 @@ Parse.Cloud.define("sendPushToLocation", function(request, response) {
 	var title = request.params.title;
 	var uri = request.params.uri;
 	var recipientUserId = request.params.recipientId;
+	var eventObjectId = request.params.eventObjectId;
 	
 	// Push query
 	var pushQuery = new Parse.Query(Parse.Installation);
@@ -57,7 +58,8 @@ Parse.Cloud.define("sendPushToLocation", function(request, response) {
 		data: {
 	 		alert: message, // the notification's message.
 	 		title: title, //(Android, Windows 8, & Windows Phone 8 only) the value displayed in the Android system tray or Windows 8 toast notification.
-	 		uri: uri // (Android only) an optional field that contains a URI. When the notification is opened, an Activity associated with opening the URI is launched.
+	 		uri: uri, // (Android only) an optional field that contains a URI. When the notification is opened, an Activity associated with opening the URI is launched.
+	 		eventObjectId: eventObjectId
 		}
 	}).then(function() {
 	 	response.success("Push foi enviado com sucesso!");
